@@ -24,6 +24,44 @@ from transformers import T5ForConditionalGeneration, T5Tokenizer
 logger = logging.getLogger(__name__)
 
 
+def _tensor_min_max(tensor: torch.Tensor) -> Tuple[float, float]:
+    detached = tensor.detach()
+    if detached.numel() == 0:
+        return float("nan"), float("nan")
+    stats_tensor = detached.to(dtype=torch.float32)
+    min_val, max_val = torch.aminmax(stats_tensor)
+    return float(min_val.item()), float(max_val.item())
+
+
+def _tensor_is_finite(tensor: torch.Tensor) -> bool:
+    return bool(torch.isfinite(tensor).all().item())
+
+
+def _tensor_list(tensor: torch.Tensor) -> list:
+    return tensor.detach().to(dtype=torch.float32).cpu().tolist()
+
+
+def _scalar_value(tensor: torch.Tensor) -> float:
+    return float(tensor.detach().to(dtype=torch.float32).item())
+
+
+def check_model_parameters_finite(
+    model: nn.Module,
+    context: str = "before forward",
+) -> None:
+    for name, param in model.named_parameters():
+        if not torch.isfinite(param).all():
+            raise FloatingPointError(
+                f"Non-finite model parameter {context}: {name}"
+            )
+
+
+def check_model_gradients_finite(model: nn.Module) -> None:
+    for name, param in model.named_parameters():
+        if param.grad is not None and not torch.isfinite(param.grad).all():
+            raise FloatingPointError(f"Non-finite gradient: {name}")
+
+
 class DataLevelAWL(nn.Module):
     VALID = {"input", "output", "input_output"}
 
@@ -110,11 +148,10 @@ class TaskLevelAWL(nn.Module):
         self.log_sigma_sq = nn.Parameter(torch.zeros(num_tasks))
 
     def _bounded_log_sigma_sq(self) -> torch.Tensor:
-        return torch.clamp(
-            self.log_sigma_sq,
-            min=self.MIN_LOG_SIGMA_SQ,
-            max=self.MAX_LOG_SIGMA_SQ,
-        )
+        # Keep ALF's log(sigma^2) formulation, but map the learnable parameter
+        # smoothly into a safe interval so exp(log_sigma_sq) cannot explode.
+        bound = float(self.MAX_LOG_SIGMA_SQ)
+        return bound * torch.tanh(self.log_sigma_sq / bound)
 
     def _sigma_sq(self) -> torch.Tensor:
         return torch.exp(self._bounded_log_sigma_sq())
@@ -134,18 +171,55 @@ class TaskLevelAWL(nn.Module):
                     f"task={i}, loss={loss.detach().item()}"
                 )
 
-        sigma_sq = self._sigma_sq()
+        raw_log_sigma_sq = self.log_sigma_sq
+        bounded_log_sigma_sq = self._bounded_log_sigma_sq()
+        sigma_sq = torch.exp(bounded_log_sigma_sq)
 
         weighted = [
             losses[k] / sigma_sq[k] for k in range(self.num_tasks)
         ]
 
         if self.alf_version == "alf1":
-            reg = torch.sum(self._bounded_log_sigma_sq())
+            reg = torch.sum(bounded_log_sigma_sq)
         else:
-            reg = torch.sum(torch.log(sigma_sq + 1.0))
+            reg = torch.sum(torch.log1p(sigma_sq))
 
         combined = sum(weighted) + reg
+
+        if self.alf_version == "alf2":
+            print(
+                "ALF2 diagnostics: "
+                f"log_sigma_sq={_tensor_list(raw_log_sigma_sq)}, "
+                f"bounded_log_sigma_sq={_tensor_list(bounded_log_sigma_sq)}, "
+                f"sigma_sq={_tensor_list(sigma_sq)}, "
+                f"aspect_loss={_scalar_value(losses[0])}, "
+                f"opinion_loss={_scalar_value(losses[1])}, "
+                f"polarity_loss={_scalar_value(losses[2])}, "
+                f"weighted_losses={[_scalar_value(x) for x in weighted]}, "
+                f"regularization_term={_scalar_value(reg)}, "
+                f"total_loss={_scalar_value(combined)}",
+                flush=True,
+            )
+
+        if not _tensor_is_finite(bounded_log_sigma_sq):
+            raise FloatingPointError(
+                f"Non-finite bounded log_sigma_sq in ALF: "
+                f"{_tensor_list(bounded_log_sigma_sq)}"
+            )
+        if not _tensor_is_finite(sigma_sq):
+            raise FloatingPointError(
+                f"Non-finite sigma_sq in ALF: {_tensor_list(sigma_sq)}"
+            )
+        for i, weighted_loss in enumerate(weighted):
+            if not torch.isfinite(weighted_loss):
+                raise FloatingPointError(
+                    f"Non-finite ALF weighted loss: task={i}, "
+                    f"weighted_loss={_scalar_value(weighted_loss)}"
+                )
+        if not torch.isfinite(reg):
+            raise FloatingPointError(
+                f"Non-finite ALF regularization term: {_scalar_value(reg)}"
+            )
 
         if not torch.isfinite(combined):
             raise FloatingPointError(
@@ -185,6 +259,7 @@ class MTISAModel(nn.Module):
         self.d_awl_strategy = d_awl_strategy
         self.t_awl_version = t_awl_version
         self.num_polarity_classes = num_polarity_classes
+        self.debug_context: Dict[str, object] = {}
 
         self.backbone = T5ForConditionalGeneration.from_pretrained(model_name)
         self.tokenizer = T5Tokenizer.from_pretrained(model_name)
@@ -210,6 +285,13 @@ class MTISAModel(nn.Module):
         if self.tokenizer.pad_token_id is not None:
             labels[labels == self.tokenizer.pad_token_id] = -100
         return labels
+
+    def set_debug_context(self, **context) -> None:
+        self.debug_context = context
+
+    def _print_debug_context(self) -> None:
+        if self.debug_context:
+            print(f"Debug context: {self.debug_context}", flush=True)
 
     def _auxiliary_forward(
         self,
@@ -273,12 +355,40 @@ class MTISAModel(nn.Module):
         # Input D-AWL: scale encoder embeddings by confidence.
         inputs_embeds = None
         if strategy in ("input", "input_output"):
-            inputs_embeds = self.backbone.get_input_embeddings()(input_ids)
-            inputs_embeds = inputs_embeds * confidence.view(-1, 1, 1).to(
-                dtype=inputs_embeds.dtype
+            embedding_layer = self.backbone.get_input_embeddings()
+            raw_inputs_embeds = embedding_layer(input_ids)
+
+            if not torch.isfinite(raw_inputs_embeds).all():
+                self._print_debug_context()
+                weight_min, weight_max = _tensor_min_max(embedding_layer.weight)
+                input_min, input_max = _tensor_min_max(input_ids)
+                conf_min, conf_max = _tensor_min_max(confidence)
+                print(
+                    "Raw embedding diagnostics: "
+                    f"embedding_layer.weight min={weight_min}, max={weight_max}; "
+                    f"embedding_layer.weight finite={_tensor_is_finite(embedding_layer.weight)}; "
+                    f"input_ids min={input_min}, max={input_max}; "
+                    f"confidence min={conf_min}, max={conf_max}",
+                    flush=True,
+                )
+                raise FloatingPointError("Raw T5 embeddings are non-finite")
+
+            inputs_embeds = raw_inputs_embeds * confidence.view(-1, 1, 1).to(
+                dtype=raw_inputs_embeds.dtype
             )
 
             if not torch.isfinite(inputs_embeds).all():
+                self._print_debug_context()
+                raw_min, raw_max = _tensor_min_max(raw_inputs_embeds)
+                conf_min, conf_max = _tensor_min_max(confidence)
+                print(
+                    "Scaled embedding diagnostics: "
+                    f"raw embedding min={raw_min}, max={raw_max}; "
+                    f"confidence min={conf_min}, max={conf_max}; "
+                    f"confidence dtype={confidence.dtype}; "
+                    f"embedding dtype={raw_inputs_embeds.dtype}",
+                    flush=True,
+                )
                 raise FloatingPointError(
                     "Non-finite inputs_embeds after D-AWL confidence scaling"
                 )
@@ -376,7 +486,13 @@ class MTISAModel(nn.Module):
                 attention_mask=polarity_attention_mask,
             )
             hidden = encoder_output.last_hidden_state[:, 0, :]
+            if not torch.isfinite(hidden).all():
+                self._print_debug_context()
+                raise FloatingPointError("Non-finite polarity encoder hidden state")
             polarity_logits = self.polarity_head(hidden)
+            if not torch.isfinite(polarity_logits).all():
+                self._print_debug_context()
+                raise FloatingPointError("Non-finite polarity logits")
             outputs["polarity_logits"] = polarity_logits
 
             if polarity_label_id is not None:
@@ -390,6 +506,10 @@ class MTISAModel(nn.Module):
                     attention_mask=polarity_attention_mask,
                     labels=labels,
                 ).loss
+
+            if "polarity_loss" in outputs and not torch.isfinite(outputs["polarity_loss"]):
+                self._print_debug_context()
+                raise FloatingPointError("Non-finite polarity loss before ALF2")
 
         if (
             return_losses

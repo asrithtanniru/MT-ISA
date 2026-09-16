@@ -26,7 +26,11 @@ from torch.utils.data import DataLoader, Dataset
 from tqdm import tqdm
 from transformers import T5Tokenizer
 
-from mt_isa_model import MTISAModel
+from mt_isa_model import (
+    MTISAModel,
+    check_model_gradients_finite,
+    check_model_parameters_finite,
+)
 
 
 logging.basicConfig(
@@ -179,41 +183,113 @@ def move_batch(batch, device):
     }
 
 
+def batch_loss_summary(
+    batch_idx: int,
+    total_batches: int,
+    out: Dict[str, torch.Tensor],
+) -> Dict[str, float]:
+    return {
+        "batch_idx": batch_idx,
+        "total_batches": total_batches,
+        "combined_loss": float(out["combined_loss"].detach().item()),
+        "aspect_loss": float(out["aspect_loss"].detach().item()),
+        "opinion_loss": float(out["opinion_loss"].detach().item()),
+        "polarity_loss": float(out["polarity_loss"].detach().item()),
+    }
+
+
+def print_batch_loss_summary(prefix: str, summary: Dict[str, float]) -> None:
+    print(
+        f"{prefix}: "
+        f"batch={summary['batch_idx']}/{summary['total_batches']}, "
+        f"combined_loss={summary['combined_loss']}, "
+        f"aspect_loss={summary['aspect_loss']}, "
+        f"opinion_loss={summary['opinion_loss']}, "
+        f"polarity_loss={summary['polarity_loss']}",
+        flush=True,
+    )
+
+
 def run_epoch(model, loader, optimizer, scheduler, device, train=True):
     model.train(train)
     total_loss = 0.0
     all_gold, all_pred = [], []
+    total_batches = len(loader)
+    previous_train_batch_summary = None
 
     if train:
         optimizer.zero_grad(set_to_none=True)
 
-    for batch in tqdm(loader, desc="Training" if train else "Validation"):
+    for batch_idx, batch in enumerate(
+        tqdm(loader, desc="Training" if train else "Validation"),
+        start=1,
+    ):
         batch = move_batch(batch, device)
+        model.set_debug_context(
+            phase="train" if train else "validation",
+            batch_idx=batch_idx,
+            total_batches=total_batches,
+            instance_ids=batch["instance_id"],
+        )
 
-        with torch.set_grad_enabled(train):
-            out = model(
-                aspect_input_ids=batch["aspect_input_ids"],
-                aspect_attention_mask=batch["aspect_attention_mask"],
-                aspect_labels=batch["aspect_labels"],
-                aspect_confidence=batch["aspect_confidence"],
-                opinion_input_ids=batch["opinion_input_ids"],
-                opinion_attention_mask=batch["opinion_attention_mask"],
-                opinion_labels=batch["opinion_labels"],
-                opinion_confidence=batch["opinion_confidence"],
-                polarity_input_ids=batch["polarity_input_ids"],
-                polarity_attention_mask=batch["polarity_attention_mask"],
-                polarity_label_id=batch["polarity_label_id"],
-                return_losses=True,
-            )
-            loss = out["combined_loss"]
-
+        try:
             if train:
-                loss.backward()
-                torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
-                optimizer.step()
-                optimizer.zero_grad(set_to_none=True)
-                if scheduler is not None:
-                    scheduler.step()
+                check_model_parameters_finite(model)
+
+            with torch.set_grad_enabled(train):
+                out = model(
+                    aspect_input_ids=batch["aspect_input_ids"],
+                    aspect_attention_mask=batch["aspect_attention_mask"],
+                    aspect_labels=batch["aspect_labels"],
+                    aspect_confidence=batch["aspect_confidence"],
+                    opinion_input_ids=batch["opinion_input_ids"],
+                    opinion_attention_mask=batch["opinion_attention_mask"],
+                    opinion_labels=batch["opinion_labels"],
+                    opinion_confidence=batch["opinion_confidence"],
+                    polarity_input_ids=batch["polarity_input_ids"],
+                    polarity_attention_mask=batch["polarity_attention_mask"],
+                    polarity_label_id=batch["polarity_label_id"],
+                    return_losses=True,
+                )
+                loss = out["combined_loss"]
+
+                current_batch_summary = batch_loss_summary(
+                    batch_idx, total_batches, out
+                )
+
+                if train:
+                    print_batch_loss_summary(
+                        "Training batch diagnostics",
+                        current_batch_summary,
+                    )
+                    loss.backward()
+                    check_model_gradients_finite(model)
+                    torch.nn.utils.clip_grad_norm_(
+                        model.parameters(),
+                        max_norm=1.0,
+                        error_if_nonfinite=True,
+                    )
+                    optimizer.step()
+                    check_model_parameters_finite(
+                        model,
+                        context="after optimizer step",
+                    )
+                    optimizer.zero_grad(set_to_none=True)
+                    if scheduler is not None:
+                        scheduler.step()
+                    previous_train_batch_summary = current_batch_summary
+        except Exception:
+            print(
+                f"Failure while processing batch {batch_idx}/{total_batches} "
+                f"(instance_ids={batch['instance_id']})",
+                flush=True,
+            )
+            if train and previous_train_batch_summary is not None:
+                print_batch_loss_summary(
+                    "Previous training batch before failure",
+                    previous_train_batch_summary,
+                )
+            raise
 
         total_loss += float(loss.detach().item())
 
