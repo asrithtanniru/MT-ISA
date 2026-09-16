@@ -1,0 +1,2415 @@
+{
+  "metrics": {
+    "accuracy": 0.5168539325842697,
+    "f1_score": 0.5196210974613633,
+    "precision": 0.5323529411764706,
+    "recall": 0.5970022718325958,
+    "correct": 138,
+    "total": 267
+  },
+  "predictions": [
+    {
+      "instance_id": "35390182#756337#5_aspect_0",
+      "sentence": "Try the rose roll (not on menu).",
+      "target": "menu",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "neutral",
+      "confidence": 0.4826611876487732,
+      "correct": true
+    },
+    {
+      "instance_id": "33071731#1007204#3_aspect_1",
+      "sentence": "In fact, this was not a Nicoise salad and was barely eatable.",
+      "target": "Nicoise salad",
+      "gold_polarity": "negative",
+      "predicted_polarity": "negative",
+      "confidence": 0.5810009837150574,
+      "correct": true
+    },
+    {
+      "instance_id": "33085939#758010#0_aspect_2",
+      "sentence": "While there's a decent menu, it shouldn't take ten minutes to get your drinks and 45 for a dessert pizza.",
+      "target": "drinks",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "negative",
+      "confidence": 0.4738982915878296,
+      "correct": false
+    },
+    {
+      "instance_id": "33085939#758010#0_aspect_3",
+      "sentence": "While there's a decent menu, it shouldn't take ten minutes to get your drinks and 45 for a dessert pizza.",
+      "target": "dessert pizza",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "negative",
+      "confidence": 0.482016921043396,
+      "correct": false
+    },
+    {
+      "instance_id": "11351513#832512#1_aspect_4",
+      "sentence": "the two waitress's looked like they had been sucking on lemons.",
+      "target": "waitress's",
+      "gold_polarity": "negative",
+      "predicted_polarity": "negative",
+      "confidence": 0.5696598291397095,
+      "correct": true
+    },
+    {
+      "instance_id": "35196520#758440#4_aspect_5",
+      "sentence": "We enjoyed ourselves thoroughly and will be going back for the desserts ....",
+      "target": "desserts",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.630808413028717,
+      "correct": true
+    },
+    {
+      "instance_id": "36244784#0#3_aspect_6",
+      "sentence": "Entrees include classics like lasagna, fettuccine Alfredo and chicken parmigiana.",
+      "target": "Entrees",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.674830973148346,
+      "correct": false
+    },
+    {
+      "instance_id": "36244784#0#3_aspect_7",
+      "sentence": "Entrees include classics like lasagna, fettuccine Alfredo and chicken parmigiana.",
+      "target": "lasagna",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.655535876750946,
+      "correct": false
+    },
+    {
+      "instance_id": "36244784#0#3_aspect_8",
+      "sentence": "Entrees include classics like lasagna, fettuccine Alfredo and chicken parmigiana.",
+      "target": "fettuccine Alfredo",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.6615393161773682,
+      "correct": false
+    },
+    {
+      "instance_id": "36244784#0#3_aspect_9",
+      "sentence": "Entrees include classics like lasagna, fettuccine Alfredo and chicken parmigiana.",
+      "target": "chicken parmigiana",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.6557375192642212,
+      "correct": false
+    },
+    {
+      "instance_id": "33070309#423221#1_aspect_10",
+      "sentence": "A nice space, as long as it doesn't get too crowded and a singleminded devotion to its chosen cuisine make Mare a great choice for seafood lovers.",
+      "target": "cuisine",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.6858062744140625,
+      "correct": true
+    },
+    {
+      "instance_id": "32882616#562969#3_aspect_11",
+      "sentence": "I never had an orange donut before so I gave it a shot.",
+      "target": "orange donut",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "neutral",
+      "confidence": 0.5291504859924316,
+      "correct": true
+    },
+    {
+      "instance_id": "11432442#650772#6_aspect_12",
+      "sentence": "Stay with the roasted chickens and you'll be fine.",
+      "target": "roasted chickens",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.6651161909103394,
+      "correct": true
+    },
+    {
+      "instance_id": "35693214#539116#1_aspect_13",
+      "sentence": "The steak melted in my mouth.",
+      "target": "steak",
+      "gold_polarity": "positive",
+      "predicted_polarity": "neutral",
+      "confidence": 0.6017783880233765,
+      "correct": false
+    },
+    {
+      "instance_id": "32950007#1320096#3_aspect_14",
+      "sentence": "The food did take a few extra minutes to come, but the cute waiters' jokes and friendliness made up for it.",
+      "target": "food",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "neutral",
+      "confidence": 0.4840039908885956,
+      "correct": true
+    },
+    {
+      "instance_id": "11651062#1264882#1_aspect_15",
+      "sentence": "i dont know what some people who rave about this hot dog are talking about.",
+      "target": "hot dog",
+      "gold_polarity": "negative",
+      "predicted_polarity": "neutral",
+      "confidence": 0.5683079361915588,
+      "correct": false
+    },
+    {
+      "instance_id": "35709337#1579632#6_aspect_16",
+      "sentence": "Anywhere else, the prices would be 3x as high!",
+      "target": "prices",
+      "gold_polarity": "positive",
+      "predicted_polarity": "negative",
+      "confidence": 0.5715094208717346,
+      "correct": false
+    },
+    {
+      "instance_id": "11351725#582163#9_aspect_17",
+      "sentence": "Our waiter was friendly and it is a shame that he didnt have a supportive staff to work with.",
+      "target": "staff",
+      "gold_polarity": "negative",
+      "predicted_polarity": "negative",
+      "confidence": 0.560471773147583,
+      "correct": true
+    },
+    {
+      "instance_id": "32930165#1643018#3_aspect_18",
+      "sentence": "I know real Indian food and this wasn't it.",
+      "target": "Indian food",
+      "gold_polarity": "negative",
+      "predicted_polarity": "negative",
+      "confidence": 0.5647484064102173,
+      "correct": true
+    },
+    {
+      "instance_id": "11359727#487554#2_aspect_19",
+      "sentence": "Even when the chef is not in the house, the food and service are right on target.",
+      "target": "chef",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.6766802668571472,
+      "correct": false
+    },
+    {
+      "instance_id": "33061325#0#3_aspect_20",
+      "sentence": "Desserts include flan and sopaipillas.",
+      "target": "Desserts",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.48131218552589417,
+      "correct": false
+    },
+    {
+      "instance_id": "33061325#0#3_aspect_21",
+      "sentence": "Desserts include flan and sopaipillas.",
+      "target": "flan",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.5296390056610107,
+      "correct": false
+    },
+    {
+      "instance_id": "33061325#0#3_aspect_22",
+      "sentence": "Desserts include flan and sopaipillas.",
+      "target": "sopaipillas",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.5383292436599731,
+      "correct": false
+    },
+    {
+      "instance_id": "32464595#574909#4_aspect_23",
+      "sentence": "Beware of the chili signed food items not unless you want to call the fire department to douse the flames in your mouth.",
+      "target": "chili signed food items",
+      "gold_polarity": "negative",
+      "predicted_polarity": "negative",
+      "confidence": 0.5510465502738953,
+      "correct": true
+    },
+    {
+      "instance_id": "32938222#1552119#1_aspect_24",
+      "sentence": "The decor is designed in a contemporary Japanese style restaurant.",
+      "target": "decor",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.6176327466964722,
+      "correct": false
+    },
+    {
+      "instance_id": "32464595#574909#2_aspect_25",
+      "sentence": "Try the ribs, sizzling beef and couple it with coconut rice.",
+      "target": "coconut rice",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.6550763845443726,
+      "correct": true
+    },
+    {
+      "instance_id": "12036269#580745#1_aspect_26",
+      "sentence": "Frankly, the chinese food here is something I can make better at home.",
+      "target": "chinese food",
+      "gold_polarity": "negative",
+      "predicted_polarity": "positive",
+      "confidence": 0.6492799520492554,
+      "correct": false
+    },
+    {
+      "instance_id": "12036269#580745#2_aspect_27",
+      "sentence": "There was only one waiter for the whole restaurant upstairs.",
+      "target": "waiter",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "negative",
+      "confidence": 0.5530748963356018,
+      "correct": false
+    },
+    {
+      "instance_id": "35695422#1464305#3_aspect_28",
+      "sentence": "We started with the scallops and asparagus and also had the soft shell crab as well as the cheese plate.",
+      "target": "scallops",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.5933865904808044,
+      "correct": false
+    },
+    {
+      "instance_id": "35695422#1464305#3_aspect_29",
+      "sentence": "We started with the scallops and asparagus and also had the soft shell crab as well as the cheese plate.",
+      "target": "asparagus",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.5916418433189392,
+      "correct": false
+    },
+    {
+      "instance_id": "35695422#1464305#3_aspect_30",
+      "sentence": "We started with the scallops and asparagus and also had the soft shell crab as well as the cheese plate.",
+      "target": "soft shell crab",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.5769515633583069,
+      "correct": false
+    },
+    {
+      "instance_id": "35695422#1464305#3_aspect_31",
+      "sentence": "We started with the scallops and asparagus and also had the soft shell crab as well as the cheese plate.",
+      "target": "cheese plate",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.5848073959350586,
+      "correct": false
+    },
+    {
+      "instance_id": "11359762#927332#1_aspect_32",
+      "sentence": "The owner and staff go to great lengths to make you feel comfortable.",
+      "target": "owner",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.6699703335762024,
+      "correct": true
+    },
+    {
+      "instance_id": "11359762#927332#1_aspect_33",
+      "sentence": "The owner and staff go to great lengths to make you feel comfortable.",
+      "target": "staff",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.6682829856872559,
+      "correct": true
+    },
+    {
+      "instance_id": "32894669#1075584#0_aspect_34",
+      "sentence": "For the price you pay for the food here, you'd expect it to be at least on par with other Japanese restaurants.",
+      "target": "price",
+      "gold_polarity": "negative",
+      "predicted_polarity": "negative",
+      "confidence": 0.5446476936340332,
+      "correct": true
+    },
+    {
+      "instance_id": "32894669#1075584#0_aspect_35",
+      "sentence": "For the price you pay for the food here, you'd expect it to be at least on par with other Japanese restaurants.",
+      "target": "food",
+      "gold_polarity": "negative",
+      "predicted_polarity": "negative",
+      "confidence": 0.5312891602516174,
+      "correct": true
+    },
+    {
+      "instance_id": "35693081#540596#1_aspect_36",
+      "sentence": "The food is all-around good, with the rolls usually excellent and the sushi/sashimi not quite on the same level.",
+      "target": "sushi/sashimi",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.6362332701683044,
+      "correct": false
+    },
+    {
+      "instance_id": "35708055#673129#2_aspect_37",
+      "sentence": "Could have had better for 1/3 the price in Chinatown.",
+      "target": "price",
+      "gold_polarity": "negative",
+      "predicted_polarity": "negative",
+      "confidence": 0.5652638673782349,
+      "correct": true
+    },
+    {
+      "instance_id": "11651063#1217842#0_aspect_38",
+      "sentence": "In addition to great hot dogs, DOTP has wonderful breakfast sandwiches that feature, in addition to great things like tator tots and English muffins, a delicious NJ-based pork product know to us Jersey girls and boys as Taylor ham.",
+      "target": "Taylor ham",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.682378351688385,
+      "correct": true
+    },
+    {
+      "instance_id": "11351819#985076#1_aspect_39",
+      "sentence": "The absolute worst service I've ever experienced and the food was below average (when they actually gave people the meals they ordered).",
+      "target": "meals",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "negative",
+      "confidence": 0.5858004689216614,
+      "correct": false
+    },
+    {
+      "instance_id": "33061445#591371#1_aspect_40",
+      "sentence": "It's about $7 for lunch and they have take-out or dine-in.",
+      "target": "lunch",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "neutral",
+      "confidence": 0.5494193434715271,
+      "correct": true
+    },
+    {
+      "instance_id": "33061445#591371#1_aspect_41",
+      "sentence": "It's about $7 for lunch and they have take-out or dine-in.",
+      "target": "take-out",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "neutral",
+      "confidence": 0.5640299320220947,
+      "correct": true
+    },
+    {
+      "instance_id": "33061445#591371#1_aspect_42",
+      "sentence": "It's about $7 for lunch and they have take-out or dine-in.",
+      "target": "dine-in",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "neutral",
+      "confidence": 0.5138933658599854,
+      "correct": true
+    },
+    {
+      "instance_id": "32934709#796678#2_aspect_43",
+      "sentence": "Be sure to accompany your food with one of their fresh juice concoctions.",
+      "target": "food",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.6513994932174683,
+      "correct": false
+    },
+    {
+      "instance_id": "33059678#631861#3_aspect_44",
+      "sentence": "I had roast chicken and a salad.",
+      "target": "roast chicken",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "neutral",
+      "confidence": 0.6931807398796082,
+      "correct": true
+    },
+    {
+      "instance_id": "33059678#631861#3_aspect_45",
+      "sentence": "I had roast chicken and a salad.",
+      "target": "salad",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "neutral",
+      "confidence": 0.6916933655738831,
+      "correct": true
+    },
+    {
+      "instance_id": "12036269#580745#8_aspect_46",
+      "sentence": "It's eaten with black vinegar and shredded ginger.",
+      "target": "black vinegar",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.4814780354499817,
+      "correct": false
+    },
+    {
+      "instance_id": "12036269#580745#8_aspect_47",
+      "sentence": "It's eaten with black vinegar and shredded ginger.",
+      "target": "shredded ginger",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.5116167664527893,
+      "correct": false
+    },
+    {
+      "instance_id": "11350390#802808#2_aspect_48",
+      "sentence": "The unattractive lighting made me want to gag, the food was overpriced, there was the most awful disco pop duo performing-and my escargot looked like it might crawl off the plate.",
+      "target": "escargot",
+      "gold_polarity": "negative",
+      "predicted_polarity": "negative",
+      "confidence": 0.6049948930740356,
+      "correct": true
+    },
+    {
+      "instance_id": "11565268#560107#1_aspect_49",
+      "sentence": "The service is always great, and the owner walks around to make sure you enjoy.",
+      "target": "owner",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.66695237159729,
+      "correct": true
+    },
+    {
+      "instance_id": "11351628#404492#5_aspect_50",
+      "sentence": "because the waiters need SEVERE ATTITUE ADJUSTMENTS.",
+      "target": "waiters",
+      "gold_polarity": "negative",
+      "predicted_polarity": "neutral",
+      "confidence": 0.503971517086029,
+      "correct": false
+    },
+    {
+      "instance_id": "11359790#823900#2_aspect_51",
+      "sentence": "When it came time to take the order the waiter gave us a hard time, walked away then came back with a paper and pen for us to write down what we wanted...excuse me but isn't that his job???",
+      "target": "waiter",
+      "gold_polarity": "negative",
+      "predicted_polarity": "negative",
+      "confidence": 0.5429025888442993,
+      "correct": true
+    },
+    {
+      "instance_id": "11351628#404492#2_aspect_52",
+      "sentence": "Dieters stick to salads or indulge in vegetarian platters.",
+      "target": "salads",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.5154430866241455,
+      "correct": true
+    },
+    {
+      "instance_id": "11351628#404492#2_aspect_53",
+      "sentence": "Dieters stick to salads or indulge in vegetarian platters.",
+      "target": "vegetarian platters",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.5060963034629822,
+      "correct": true
+    },
+    {
+      "instance_id": "11350141#1745557#0_aspect_54",
+      "sentence": "My friends and I stop here for pizza before hitting the Kips Bay movie theater.",
+      "target": "pizza",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "neutral",
+      "confidence": 0.6385257244110107,
+      "correct": true
+    },
+    {
+      "instance_id": "11351561#744321#0_aspect_55",
+      "sentence": "It's just everything...the food, the atmosphere...the incrediby kind and gracious hostess.",
+      "target": "food",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.6934403777122498,
+      "correct": true
+    },
+    {
+      "instance_id": "11351561#744321#0_aspect_56",
+      "sentence": "It's just everything...the food, the atmosphere...the incrediby kind and gracious hostess.",
+      "target": "atmosphere",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.696248471736908,
+      "correct": true
+    },
+    {
+      "instance_id": "11313316#1234433#1_aspect_57",
+      "sentence": "I usually get one the Vietnamese Beef Noodle Soup.",
+      "target": "Vietnamese Beef Noodle Soup",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "neutral",
+      "confidence": 0.5353406071662903,
+      "correct": true
+    },
+    {
+      "instance_id": "33071731#1007204#0_aspect_58",
+      "sentence": "Unfortunately, we chose this spot for lunch as we had done a lot of walking and ended up at the South St Seaport.",
+      "target": "lunch",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "negative",
+      "confidence": 0.4767482280731201,
+      "correct": false
+    },
+    {
+      "instance_id": "35084984#412657#1_aspect_59",
+      "sentence": "My friend had a burger and I had these wonderful blueberry pancakes.",
+      "target": "burger",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.6236732602119446,
+      "correct": false
+    },
+    {
+      "instance_id": "11359618#788741#2_aspect_60",
+      "sentence": "Service is excellent, no wait, and you get a lot for the price.",
+      "target": "price",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.6681669354438782,
+      "correct": true
+    },
+    {
+      "instance_id": "11661949#1709112#3_aspect_61",
+      "sentence": "We didn't know if we should order a drink or leave?",
+      "target": "drink",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "negative",
+      "confidence": 0.5252920985221863,
+      "correct": false
+    },
+    {
+      "instance_id": "11558693#1436895#1_aspect_62",
+      "sentence": "First walking in the place seemed to have great ambience.",
+      "target": "place",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.540603518486023,
+      "correct": true
+    },
+    {
+      "instance_id": "35700731#1595671#0_aspect_63",
+      "sentence": "I went to Kitchenette this weekend for brunch.",
+      "target": "brunch",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "neutral",
+      "confidence": 0.705724835395813,
+      "correct": true
+    },
+    {
+      "instance_id": "11482070#503858#1_aspect_64",
+      "sentence": "Everytime I go there I can't pick anything to eat and not because the menu is filled with great things to eat.",
+      "target": "menu",
+      "gold_polarity": "negative",
+      "predicted_polarity": "neutral",
+      "confidence": 0.4920113682746887,
+      "correct": false
+    },
+    {
+      "instance_id": "11349922#547169#3_aspect_65",
+      "sentence": "Half a chicken with a mountain of rice and beans for $6.25.",
+      "target": "rice",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "neutral",
+      "confidence": 0.6502282023429871,
+      "correct": true
+    },
+    {
+      "instance_id": "11349922#547169#3_aspect_66",
+      "sentence": "Half a chicken with a mountain of rice and beans for $6.25.",
+      "target": "beans",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "neutral",
+      "confidence": 0.6504397392272949,
+      "correct": true
+    },
+    {
+      "instance_id": "11349922#547169#3_aspect_67",
+      "sentence": "Half a chicken with a mountain of rice and beans for $6.25.",
+      "target": "chicken",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "neutral",
+      "confidence": 0.6158220171928406,
+      "correct": true
+    },
+    {
+      "instance_id": "11359727#487554#4_aspect_68",
+      "sentence": "Chef Waldy's always measures up.",
+      "target": "Chef",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.6163466572761536,
+      "correct": true
+    },
+    {
+      "instance_id": "35819603#1613701#2_aspect_69",
+      "sentence": "Go for the Seafood Paella for two.",
+      "target": "Seafood Paella for two",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.6112350225448608,
+      "correct": true
+    },
+    {
+      "instance_id": "11624981#549489#6_aspect_70",
+      "sentence": "their brunch menu had something for everyone.",
+      "target": "brunch menu",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.6063444018363953,
+      "correct": true
+    },
+    {
+      "instance_id": "11519527#1541586#3_aspect_71",
+      "sentence": "THE BANANA PUDDING THEY SERVE HAS NEVER SEEN AN OVEN,THE CRABCAKES ARE WAY OVER SALTED AND DON'T GET ME STARTED ON THE VERY GREASY MAC AND CHEESE.",
+      "target": "BANANA PUDDING",
+      "gold_polarity": "negative",
+      "predicted_polarity": "neutral",
+      "confidence": 0.5472849011421204,
+      "correct": false
+    },
+    {
+      "instance_id": "32892297#645108#1_aspect_72",
+      "sentence": "The food was definitely good, but when all was said and done, I just couldn't justify it for the price (including 2 drinks, $100/person)...",
+      "target": "price",
+      "gold_polarity": "negative",
+      "predicted_polarity": "negative",
+      "confidence": 0.5566538572311401,
+      "correct": true
+    },
+    {
+      "instance_id": "32892297#645108#1_aspect_73",
+      "sentence": "The food was definitely good, but when all was said and done, I just couldn't justify it for the price (including 2 drinks, $100/person)...",
+      "target": "drinks",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "negative",
+      "confidence": 0.5519859194755554,
+      "correct": false
+    },
+    {
+      "instance_id": "32950061#1264345#0_aspect_74",
+      "sentence": "I've come here for casual lunches as well as for a friend's birthday and I always enjoy myself.",
+      "target": "casual lunches",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.6156749725341797,
+      "correct": false
+    },
+    {
+      "instance_id": "11484031#1129679#3_aspect_75",
+      "sentence": "They have homemade pastas of all kinds -- I recommend the gnocchi -- yum!",
+      "target": "homemade pastas",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.6551841497421265,
+      "correct": true
+    },
+    {
+      "instance_id": "35390148#588852#4_aspect_76",
+      "sentence": "How can hope to stay in business with service like this?",
+      "target": "service",
+      "gold_polarity": "negative",
+      "predicted_polarity": "neutral",
+      "confidence": 0.5607434511184692,
+      "correct": false
+    },
+    {
+      "instance_id": "32408649#945413#2_aspect_77",
+      "sentence": "Best things to order are from the grill (Churrasco and Ribs).",
+      "target": "grill",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.6815907955169678,
+      "correct": true
+    },
+    {
+      "instance_id": "32408649#945413#2_aspect_78",
+      "sentence": "Best things to order are from the grill (Churrasco and Ribs).",
+      "target": "Churrasco",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.6819868683815002,
+      "correct": true
+    },
+    {
+      "instance_id": "32408649#945413#2_aspect_79",
+      "sentence": "Best things to order are from the grill (Churrasco and Ribs).",
+      "target": "Ribs",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.6802957057952881,
+      "correct": true
+    },
+    {
+      "instance_id": "35196520#758440#0_aspect_80",
+      "sentence": "The traditional Italian items are great - cheap and served in a cozy setting.",
+      "target": "served",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.6879193186759949,
+      "correct": true
+    },
+    {
+      "instance_id": "33085669#409731#7_aspect_81",
+      "sentence": "Whether your choose the iced blended mocha or the hot white mocha you are sure to be extremely happy.",
+      "target": "iced blended mocha",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.7043989300727844,
+      "correct": true
+    },
+    {
+      "instance_id": "33085669#409731#7_aspect_82",
+      "sentence": "Whether your choose the iced blended mocha or the hot white mocha you are sure to be extremely happy.",
+      "target": "hot white mocha",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.7072181701660156,
+      "correct": true
+    },
+    {
+      "instance_id": "33068909#1189415#1_aspect_83",
+      "sentence": "last Tuesday for a late lunch with a friend.",
+      "target": "late lunch",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "neutral",
+      "confidence": 0.612760066986084,
+      "correct": true
+    },
+    {
+      "instance_id": "32894416#1193614#4_aspect_84",
+      "sentence": "Another friend had to ask 3 times for parmesan cheese.",
+      "target": "parmesan cheese",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "neutral",
+      "confidence": 0.4931624233722687,
+      "correct": true
+    },
+    {
+      "instance_id": "35177381#521555#1_aspect_85",
+      "sentence": "Our waitress had apparently never tried any of the food, and there was no one to recommend any wine.",
+      "target": "waitress",
+      "gold_polarity": "negative",
+      "predicted_polarity": "negative",
+      "confidence": 0.5975496768951416,
+      "correct": true
+    },
+    {
+      "instance_id": "35177381#521555#1_aspect_86",
+      "sentence": "Our waitress had apparently never tried any of the food, and there was no one to recommend any wine.",
+      "target": "food",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "negative",
+      "confidence": 0.5968396663665771,
+      "correct": false
+    },
+    {
+      "instance_id": "35177381#521555#1_aspect_87",
+      "sentence": "Our waitress had apparently never tried any of the food, and there was no one to recommend any wine.",
+      "target": "wine",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "negative",
+      "confidence": 0.5972236394882202,
+      "correct": false
+    },
+    {
+      "instance_id": "33071731#1007204#4_aspect_88",
+      "sentence": "The unfortunate lady next to us thought she had ordered a salad (including asking for salad dressing) and was instead given a quesedilla.",
+      "target": "salad",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "negative",
+      "confidence": 0.5311800837516785,
+      "correct": false
+    },
+    {
+      "instance_id": "33071731#1007204#4_aspect_89",
+      "sentence": "The unfortunate lady next to us thought she had ordered a salad (including asking for salad dressing) and was instead given a quesedilla.",
+      "target": "salad dressing",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "negative",
+      "confidence": 0.5314352512359619,
+      "correct": false
+    },
+    {
+      "instance_id": "33071731#1007204#4_aspect_90",
+      "sentence": "The unfortunate lady next to us thought she had ordered a salad (including asking for salad dressing) and was instead given a quesedilla.",
+      "target": "quesedilla",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "negative",
+      "confidence": 0.5148563385009766,
+      "correct": false
+    },
+    {
+      "instance_id": "11302357#835238#1_aspect_91",
+      "sentence": "The service was pretty poor all around, the food was well below average relative to the cost, and outside there is a crazy bum who harasses every customer who leaves the place.",
+      "target": "cost",
+      "gold_polarity": "negative",
+      "predicted_polarity": "negative",
+      "confidence": 0.5828981399536133,
+      "correct": true
+    },
+    {
+      "instance_id": "35701425#1155856#4_aspect_92",
+      "sentence": "I had to wait for my friend at the bar for a few minutes",
+      "target": "bar",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "negative",
+      "confidence": 0.5190191268920898,
+      "correct": false
+    },
+    {
+      "instance_id": "33071731#1007204#5_aspect_93",
+      "sentence": "When she complained, the waitress said, Sorry.",
+      "target": "waitress",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "negative",
+      "confidence": 0.48852959275245667,
+      "correct": false
+    },
+    {
+      "instance_id": "32894966#1727613#2_aspect_94",
+      "sentence": "They specialize in smoothies and fresh juices.",
+      "target": "smoothies",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.6490674018859863,
+      "correct": true
+    },
+    {
+      "instance_id": "32894966#1727613#2_aspect_95",
+      "sentence": "They specialize in smoothies and fresh juices.",
+      "target": "fresh juices",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.6515405178070068,
+      "correct": true
+    },
+    {
+      "instance_id": "11359790#823900#3_aspect_96",
+      "sentence": "The manager then told us we could order from whatever menu we wanted but by that time we were so annoyed with the waiter and the resturant that we let and went some place else.",
+      "target": "menu",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "negative",
+      "confidence": 0.5808522701263428,
+      "correct": false
+    },
+    {
+      "instance_id": "11359790#823900#3_aspect_97",
+      "sentence": "The manager then told us we could order from whatever menu we wanted but by that time we were so annoyed with the waiter and the resturant that we let and went some place else.",
+      "target": "manager",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "negative",
+      "confidence": 0.5808267593383789,
+      "correct": false
+    },
+    {
+      "instance_id": "35709337#1579632#1_aspect_98",
+      "sentence": "From the erbazzone emiliana to the mostarda on the cheese plate, the dishes at this restaurant are all handled with delicate care.",
+      "target": "erbazzone emiliana",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.6550308465957642,
+      "correct": true
+    },
+    {
+      "instance_id": "35709337#1579632#1_aspect_99",
+      "sentence": "From the erbazzone emiliana to the mostarda on the cheese plate, the dishes at this restaurant are all handled with delicate care.",
+      "target": "mostarda on the cheese plate",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.6540017127990723,
+      "correct": true
+    },
+    {
+      "instance_id": "35709337#1579632#1_aspect_100",
+      "sentence": "From the erbazzone emiliana to the mostarda on the cheese plate, the dishes at this restaurant are all handled with delicate care.",
+      "target": "dishes",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.6555137634277344,
+      "correct": true
+    },
+    {
+      "instance_id": "32892130#435512#2_aspect_101",
+      "sentence": "There's candlelight and music.",
+      "target": "candlelight",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.6790705919265747,
+      "correct": false
+    },
+    {
+      "instance_id": "32892130#435512#2_aspect_102",
+      "sentence": "There's candlelight and music.",
+      "target": "music",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.6760620474815369,
+      "correct": false
+    },
+    {
+      "instance_id": "11558693#1436895#5_aspect_103",
+      "sentence": "I ordered the Chicken Teriyaki and my husband got Garlic Shrimp.",
+      "target": "Chicken Teriyaki",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "neutral",
+      "confidence": 0.679939329624176,
+      "correct": true
+    },
+    {
+      "instance_id": "11558693#1436895#5_aspect_104",
+      "sentence": "I ordered the Chicken Teriyaki and my husband got Garlic Shrimp.",
+      "target": "Garlic Shrimp",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "neutral",
+      "confidence": 0.6815679669380188,
+      "correct": true
+    },
+    {
+      "instance_id": "32894966#1727613#10_aspect_105",
+      "sentence": "The staff members are extremely friendly and even replaced my drink once when I dropped it outside.",
+      "target": "drink",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.6399164199829102,
+      "correct": false
+    },
+    {
+      "instance_id": "32891589#573560#1_aspect_106",
+      "sentence": "They have wheat crusted pizza made with really fresh and yummy ingredients.",
+      "target": "wheat crusted pizza",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.6740255355834961,
+      "correct": true
+    },
+    {
+      "instance_id": "33070286#1133164#3_aspect_107",
+      "sentence": "THEY HAVE WAITERS ON THE SIDEWALK TRYING TO PULL YOU IN WHICH MADE US SUSPICIOUS.",
+      "target": "WAITERS",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "neutral",
+      "confidence": 0.5842962265014648,
+      "correct": true
+    },
+    {
+      "instance_id": "11302357#835238#3_aspect_108",
+      "sentence": "Probably my worst dining experience in new york, and I'm a former waiter so I know what I'm talking about.",
+      "target": "waiter",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "negative",
+      "confidence": 0.5829185843467712,
+      "correct": false
+    },
+    {
+      "instance_id": "11359762#927332#4_aspect_109",
+      "sentence": "Ask for the round corner table next to the large window.",
+      "target": "round corner table next to the large window",
+      "gold_polarity": "positive",
+      "predicted_polarity": "neutral",
+      "confidence": 0.5519247055053711,
+      "correct": false
+    },
+    {
+      "instance_id": "35708055#673129#1_aspect_110",
+      "sentence": "Didn't seem like any effort was made to the display and quality of the food.",
+      "target": "display and quality of the food",
+      "gold_polarity": "negative",
+      "predicted_polarity": "negative",
+      "confidence": 0.5741099119186401,
+      "correct": true
+    },
+    {
+      "instance_id": "11351814#1650882#5_aspect_111",
+      "sentence": "The other times I've gone it's romantic date heaven, you can walk in get a booth by the windows, be treated like a VIP in a not-crowded place, with great food and service.",
+      "target": "booth by the windows",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.6798846125602722,
+      "correct": false
+    },
+    {
+      "instance_id": "11651065#413029#2_aspect_112",
+      "sentence": "Somewhat disappointing wine list (only new vintages.",
+      "target": "vintages",
+      "gold_polarity": "negative",
+      "predicted_polarity": "negative",
+      "confidence": 0.6015768647193909,
+      "correct": true
+    },
+    {
+      "instance_id": "11639261#426600#0_aspect_113",
+      "sentence": "If your looking for nasty high priced food with a dash of ghetto scenery cheap BX A$$ this is the place to be!!",
+      "target": "scenery",
+      "gold_polarity": "negative",
+      "predicted_polarity": "positive",
+      "confidence": 0.6590038537979126,
+      "correct": false
+    },
+    {
+      "instance_id": "12036269#580745#6_aspect_114",
+      "sentence": "I can understand the prices if it served better food, like some Chinese restaurants in midtown/uptown area.",
+      "target": "prices",
+      "gold_polarity": "negative",
+      "predicted_polarity": "negative",
+      "confidence": 0.5343672633171082,
+      "correct": true
+    },
+    {
+      "instance_id": "12036269#580745#6_aspect_115",
+      "sentence": "I can understand the prices if it served better food, like some Chinese restaurants in midtown/uptown area.",
+      "target": "food",
+      "gold_polarity": "negative",
+      "predicted_polarity": "negative",
+      "confidence": 0.5439762473106384,
+      "correct": true
+    },
+    {
+      "instance_id": "36244423#1058258#1_aspect_116",
+      "sentence": "The staff is 100% Italian and the food is as authentic as it gets.",
+      "target": "staff",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.6737084984779358,
+      "correct": true
+    },
+    {
+      "instance_id": "11350496#1560668#4_aspect_117",
+      "sentence": "My only complaint might be the fortune cookies - I've never had a cookie predict bad luck for me before I visited Kar.",
+      "target": "cookie",
+      "gold_polarity": "negative",
+      "predicted_polarity": "negative",
+      "confidence": 0.4815272390842438,
+      "correct": true
+    },
+    {
+      "instance_id": "11464789#378665#2_aspect_118",
+      "sentence": "Have a mojito and sit in the back patio.",
+      "target": "mojito",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.5541382431983948,
+      "correct": true
+    },
+    {
+      "instance_id": "11464789#378665#2_aspect_119",
+      "sentence": "Have a mojito and sit in the back patio.",
+      "target": "back patio",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.48205071687698364,
+      "correct": true
+    },
+    {
+      "instance_id": "11408372#630381#0_aspect_120",
+      "sentence": "I went this past Saturday and had a excellent meal of consisting of a braised lamb shank with mashed potatoes.",
+      "target": "braised lamb shank with mashed potatoes",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.5890418887138367,
+      "correct": true
+    },
+    {
+      "instance_id": "32894669#1075584#2_aspect_121",
+      "sentence": "The waitress came by to pick up the soy sauce WHILE we were eating our lunch!!!!!",
+      "target": "waitress",
+      "gold_polarity": "negative",
+      "predicted_polarity": "neutral",
+      "confidence": 0.6431807279586792,
+      "correct": false
+    },
+    {
+      "instance_id": "32894669#1075584#2_aspect_122",
+      "sentence": "The waitress came by to pick up the soy sauce WHILE we were eating our lunch!!!!!",
+      "target": "soy sauce",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "neutral",
+      "confidence": 0.6576147675514221,
+      "correct": true
+    },
+    {
+      "instance_id": "32894669#1075584#2_aspect_123",
+      "sentence": "The waitress came by to pick up the soy sauce WHILE we were eating our lunch!!!!!",
+      "target": "lunch",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "neutral",
+      "confidence": 0.6467583179473877,
+      "correct": true
+    },
+    {
+      "instance_id": "11661949#1709112#2_aspect_124",
+      "sentence": "So we sat at the bar, the bartender didn't seem like he wanted to be there.",
+      "target": "bar",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "negative",
+      "confidence": 0.5624567270278931,
+      "correct": false
+    },
+    {
+      "instance_id": "11661949#1709112#2_aspect_125",
+      "sentence": "So we sat at the bar, the bartender didn't seem like he wanted to be there.",
+      "target": "bartender",
+      "gold_polarity": "negative",
+      "predicted_polarity": "negative",
+      "confidence": 0.5621877908706665,
+      "correct": true
+    },
+    {
+      "instance_id": "11349845#1188496#0_aspect_126",
+      "sentence": "Would you ever believe that when you complain about over an hour wait, when they tell you it will be 20-30 minutes, the manager tells the bartender to spill the drinks you just paid for?",
+      "target": "wait",
+      "gold_polarity": "negative",
+      "predicted_polarity": "negative",
+      "confidence": 0.565126895904541,
+      "correct": true
+    },
+    {
+      "instance_id": "11349845#1188496#0_aspect_127",
+      "sentence": "Would you ever believe that when you complain about over an hour wait, when they tell you it will be 20-30 minutes, the manager tells the bartender to spill the drinks you just paid for?",
+      "target": "manager",
+      "gold_polarity": "negative",
+      "predicted_polarity": "negative",
+      "confidence": 0.5606530904769897,
+      "correct": true
+    },
+    {
+      "instance_id": "11349845#1188496#0_aspect_128",
+      "sentence": "Would you ever believe that when you complain about over an hour wait, when they tell you it will be 20-30 minutes, the manager tells the bartender to spill the drinks you just paid for?",
+      "target": "bartender",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "negative",
+      "confidence": 0.5565468072891235,
+      "correct": false
+    },
+    {
+      "instance_id": "11349845#1188496#0_aspect_129",
+      "sentence": "Would you ever believe that when you complain about over an hour wait, when they tell you it will be 20-30 minutes, the manager tells the bartender to spill the drinks you just paid for?",
+      "target": "drinks",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "negative",
+      "confidence": 0.557587742805481,
+      "correct": false
+    },
+    {
+      "instance_id": "35668286#0#0_aspect_130",
+      "sentence": "In Short The Black Sheep distinguishes itself from the Midtown pub herd with a look that's a mix of sports-bar butch and ornate kitsch.",
+      "target": "look",
+      "gold_polarity": "negative",
+      "predicted_polarity": "positive",
+      "confidence": 0.5851297378540039,
+      "correct": false
+    },
+    {
+      "instance_id": "33060905#1138585#2_aspect_131",
+      "sentence": "then she made a fuss about not being able to add 1 or 2 chairs on either end of the table for additional people.",
+      "target": "chairs",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "negative",
+      "confidence": 0.5606368780136108,
+      "correct": false
+    },
+    {
+      "instance_id": "33060905#1138585#2_aspect_132",
+      "sentence": "then she made a fuss about not being able to add 1 or 2 chairs on either end of the table for additional people.",
+      "target": "table",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "negative",
+      "confidence": 0.5626289248466492,
+      "correct": false
+    },
+    {
+      "instance_id": "35693216#1233439#1_aspect_133",
+      "sentence": "The happy hour is so cheap, but that does not reflect the service or the atmosphere.",
+      "target": "service",
+      "gold_polarity": "positive",
+      "predicted_polarity": "negative",
+      "confidence": 0.5912529230117798,
+      "correct": false
+    },
+    {
+      "instance_id": "35693216#1233439#1_aspect_134",
+      "sentence": "The happy hour is so cheap, but that does not reflect the service or the atmosphere.",
+      "target": "atmosphere",
+      "gold_polarity": "positive",
+      "predicted_polarity": "negative",
+      "confidence": 0.5915346741676331,
+      "correct": false
+    },
+    {
+      "instance_id": "33068909#1189415#2_aspect_135",
+      "sentence": "After waiting for almost an hour, the waiter brusquely told us he'd forgotten to give the kitchen our order.",
+      "target": "kitchen",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "negative",
+      "confidence": 0.5623000264167786,
+      "correct": false
+    },
+    {
+      "instance_id": "33068909#1189415#2_aspect_136",
+      "sentence": "After waiting for almost an hour, the waiter brusquely told us he'd forgotten to give the kitchen our order.",
+      "target": "waiting",
+      "gold_polarity": "negative",
+      "predicted_polarity": "negative",
+      "confidence": 0.5651243925094604,
+      "correct": true
+    },
+    {
+      "instance_id": "11651065#413029#3_aspect_137",
+      "sentence": "but for the value, it was a great affordable spot to enjoy a fun night out with small group.",
+      "target": "value",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.6139496564865112,
+      "correct": true
+    },
+    {
+      "instance_id": "11351725#582163#4_aspect_138",
+      "sentence": "We ordered a glass of wine and were finished eating and paying before the wine came.",
+      "target": "glass of wine",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "neutral",
+      "confidence": 0.49907130002975464,
+      "correct": true
+    },
+    {
+      "instance_id": "35720486#684689#0_aspect_139",
+      "sentence": "It was good, but none of the flavors WOW.",
+      "target": "flavors",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "negative",
+      "confidence": 0.5922689437866211,
+      "correct": false
+    },
+    {
+      "instance_id": "33106326#864352#1_aspect_140",
+      "sentence": "for about eleven bucks you get a gigantic burrito (or tacos), margarita, and dessert.",
+      "target": "margarita",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "neutral",
+      "confidence": 0.5341575145721436,
+      "correct": true
+    },
+    {
+      "instance_id": "33106326#864352#1_aspect_141",
+      "sentence": "for about eleven bucks you get a gigantic burrito (or tacos), margarita, and dessert.",
+      "target": "dessert",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "neutral",
+      "confidence": 0.5836054086685181,
+      "correct": true
+    },
+    {
+      "instance_id": "33060905#1138585#1_aspect_142",
+      "sentence": "the restaurant was completely empty, but she gave me a dirty look and asked, no reservations?",
+      "target": "reservations",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "negative",
+      "confidence": 0.5647329688072205,
+      "correct": false
+    },
+    {
+      "instance_id": "11538980#453602#1_aspect_143",
+      "sentence": "the food was mediocre to be kind - the interior is small and average - the owners are a tag-team of unpleasantries - so rude and snotty i actually let out a hearty guffaw whilst dining.",
+      "target": "dining",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "negative",
+      "confidence": 0.5957731604576111,
+      "correct": false
+    },
+    {
+      "instance_id": "35743460#0#3_aspect_144",
+      "sentence": "Offerings like hot cakes and the Egg McMuffin sandwich are available for breakfast.",
+      "target": "breakfast",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.6251803636550903,
+      "correct": false
+    },
+    {
+      "instance_id": "33070605#1232775#3_aspect_145",
+      "sentence": "rice dishes and noodle dishes rarely exceed $5 and add on a refreshing ice drink for $2 and you're set for the night!",
+      "target": "rice dishes",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.6873999834060669,
+      "correct": true
+    },
+    {
+      "instance_id": "33070605#1232775#3_aspect_146",
+      "sentence": "rice dishes and noodle dishes rarely exceed $5 and add on a refreshing ice drink for $2 and you're set for the night!",
+      "target": "noodle dishes",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.6853793859481812,
+      "correct": true
+    },
+    {
+      "instance_id": "32899414#512291#3_aspect_147",
+      "sentence": "Cuisine is billed as asian fusion - doesn't meet the bill.",
+      "target": "Cuisine",
+      "gold_polarity": "negative",
+      "predicted_polarity": "negative",
+      "confidence": 0.5715848803520203,
+      "correct": true
+    },
+    {
+      "instance_id": "32899414#512291#3_aspect_148",
+      "sentence": "Cuisine is billed as asian fusion - doesn't meet the bill.",
+      "target": "bill",
+      "gold_polarity": "negative",
+      "predicted_polarity": "negative",
+      "confidence": 0.5587944388389587,
+      "correct": true
+    },
+    {
+      "instance_id": "32899414#512291#3_aspect_149",
+      "sentence": "Cuisine is billed as asian fusion - doesn't meet the bill.",
+      "target": "asian fusion",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "negative",
+      "confidence": 0.5746504068374634,
+      "correct": false
+    },
+    {
+      "instance_id": "32899414#512291#3_aspect_150",
+      "sentence": "Cuisine is billed as asian fusion - doesn't meet the bill.",
+      "target": "billed",
+      "gold_polarity": "negative",
+      "predicted_polarity": "negative",
+      "confidence": 0.5678209662437439,
+      "correct": true
+    },
+    {
+      "instance_id": "35170181#0#3_aspect_151",
+      "sentence": "Dishes denoted as \"Roy's Classics\" (marked on the menu with asterisks) are tried-and-true recipes, such as macadamia-crusted mahi mahi, or subtly sweet honey-mustard beef short ribs.",
+      "target": "\"Roy's Classics\"",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.6333752274513245,
+      "correct": true
+    },
+    {
+      "instance_id": "35170181#0#3_aspect_152",
+      "sentence": "Dishes denoted as \"Roy's Classics\" (marked on the menu with asterisks) are tried-and-true recipes, such as macadamia-crusted mahi mahi, or subtly sweet honey-mustard beef short ribs.",
+      "target": "menu",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.6280856728553772,
+      "correct": false
+    },
+    {
+      "instance_id": "35177381#521555#0_aspect_153",
+      "sentence": "I came to fresh expecting a great meal, and all I got was marginally so-so food served in a restaurant that was just so freezing we couldn't enjoy eating.",
+      "target": "meal",
+      "gold_polarity": "negative",
+      "predicted_polarity": "negative",
+      "confidence": 0.555940568447113,
+      "correct": true
+    },
+    {
+      "instance_id": "35177381#521555#0_aspect_154",
+      "sentence": "I came to fresh expecting a great meal, and all I got was marginally so-so food served in a restaurant that was just so freezing we couldn't enjoy eating.",
+      "target": "served",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "negative",
+      "confidence": 0.5725061297416687,
+      "correct": false
+    },
+    {
+      "instance_id": "35886114#1249751#0_aspect_155",
+      "sentence": "The lone argentine chorizo appetizer at $8.95 was a heavy fennel flavored Italian sausage like the ones that sell for $2.99/lb at the store.",
+      "target": "argentine chorizo appetizer",
+      "gold_polarity": "negative",
+      "predicted_polarity": "negative",
+      "confidence": 0.4908403158187866,
+      "correct": true
+    },
+    {
+      "instance_id": "32894966#1727613#8_aspect_156",
+      "sentence": "Most of the sandwiches are made with soy mayonaise which is actually pretty good.",
+      "target": "soy mayonaise",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.6707783937454224,
+      "correct": true
+    },
+    {
+      "instance_id": "33060905#1138585#0_aspect_157",
+      "sentence": "i went in one day asking for a table for a group and was greeted by a very rude hostess.",
+      "target": "table",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "negative",
+      "confidence": 0.5687519311904907,
+      "correct": false
+    },
+    {
+      "instance_id": "35709337#1579632#2_aspect_158",
+      "sentence": "Not only is the food authentic, but the staff here are practically off-the-boat, they are young and hip and know what they are doing when it comes to food and wine.",
+      "target": "wine",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.6369886994361877,
+      "correct": true
+    },
+    {
+      "instance_id": "11484031#1129679#2_aspect_159",
+      "sentence": "And the food, well the food will keep you coming back.",
+      "target": "food",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.6743851900100708,
+      "correct": true
+    },
+    {
+      "instance_id": "11484031#1129679#2_aspect_160",
+      "sentence": "And the food, well the food will keep you coming back.",
+      "target": "food",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.6743851900100708,
+      "correct": true
+    },
+    {
+      "instance_id": "11351819#985076#2_aspect_161",
+      "sentence": "Waiting three hours before getting our entrees was a treat as well.",
+      "target": "entrees",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.5948529243469238,
+      "correct": false
+    },
+    {
+      "instance_id": "11351819#985076#2_aspect_162",
+      "sentence": "Waiting three hours before getting our entrees was a treat as well.",
+      "target": "Waiting",
+      "gold_polarity": "negative",
+      "predicted_polarity": "positive",
+      "confidence": 0.578425407409668,
+      "correct": false
+    },
+    {
+      "instance_id": "11313316#1234433#3_aspect_163",
+      "sentence": "You can eat gourmet food at a fast food price.",
+      "target": "price",
+      "gold_polarity": "positive",
+      "predicted_polarity": "neutral",
+      "confidence": 0.5534716844558716,
+      "correct": false
+    },
+    {
+      "instance_id": "35171678#484493#1_aspect_164",
+      "sentence": "the dinner menu offers a variety of great entrees, including fresh seafood and huge steaks, there's also a couple of non-meat alternatives.",
+      "target": "non-meat alternatives",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.6192108392715454,
+      "correct": false
+    },
+    {
+      "instance_id": "11302357#835238#0_aspect_165",
+      "sentence": "What can you say about a place where the waitress brings out the wrong entree, then verbally assaults your 80 year old grandmother and gives her lip about sending it back (which she did politely, by the way).",
+      "target": "waitress",
+      "gold_polarity": "negative",
+      "predicted_polarity": "negative",
+      "confidence": 0.5583868026733398,
+      "correct": true
+    },
+    {
+      "instance_id": "33071731#1007204#6_aspect_166",
+      "sentence": "15% gratuity automatically added to the bill.",
+      "target": "bill",
+      "gold_polarity": "negative",
+      "predicted_polarity": "neutral",
+      "confidence": 0.5597428679466248,
+      "correct": false
+    },
+    {
+      "instance_id": "33071731#1007204#6_aspect_167",
+      "sentence": "15% gratuity automatically added to the bill.",
+      "target": "gratuity",
+      "gold_polarity": "negative",
+      "predicted_polarity": "neutral",
+      "confidence": 0.574999213218689,
+      "correct": false
+    },
+    {
+      "instance_id": "32894522#1633452#0_aspect_168",
+      "sentence": "Was her Monday for lunch - was working on a film in the area - and found this rare jewel.",
+      "target": "lunch",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.6070567965507507,
+      "correct": false
+    },
+    {
+      "instance_id": "35668126#536759#4_aspect_169",
+      "sentence": "Dug the blue bar area too.",
+      "target": "blue bar area",
+      "gold_polarity": "positive",
+      "predicted_polarity": "neutral",
+      "confidence": 0.5192916393280029,
+      "correct": false
+    },
+    {
+      "instance_id": "35390148#588852#0_aspect_170",
+      "sentence": "I got the opportunity to dine at your establishment again a few weeks ago, I was in your upstrairs dining area.",
+      "target": "upstrairs dining area",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "neutral",
+      "confidence": 0.6495036482810974,
+      "correct": true
+    },
+    {
+      "instance_id": "11351399#0#7_aspect_171",
+      "sentence": "Menus feature seasonal picks, like sweet corn-foie gras brulee.",
+      "target": "sweet corn-foie gras brulee",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.6263076066970825,
+      "correct": false
+    },
+    {
+      "instance_id": "11351399#0#6_aspect_172",
+      "sentence": "Innovations are just as assured, from the simple Carinthia cheese ravioli with wild mushrooms to the caviar-topped sturgeon, beautifully matched with a bright green spinach-vodka sauce.",
+      "target": "caviar-topped sturgeon",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.7051917910575867,
+      "correct": true
+    },
+    {
+      "instance_id": "11351328#1638529#4_aspect_173",
+      "sentence": "I had to flag down a third staff person for a fork... so now it's goodbye Little RUDE Pie Company.",
+      "target": "staff person",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "neutral",
+      "confidence": 0.503078818321228,
+      "correct": true
+    },
+    {
+      "instance_id": "11351328#1638529#4_aspect_174",
+      "sentence": "I had to flag down a third staff person for a fork... so now it's goodbye Little RUDE Pie Company.",
+      "target": "fork",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "neutral",
+      "confidence": 0.5290228724479675,
+      "correct": true
+    },
+    {
+      "instance_id": "33070532#604874#0_aspect_175",
+      "sentence": "The decor is what initially got me in the door.",
+      "target": "decor",
+      "gold_polarity": "positive",
+      "predicted_polarity": "neutral",
+      "confidence": 0.5647298693656921,
+      "correct": false
+    },
+    {
+      "instance_id": "35717889#579150#2_aspect_176",
+      "sentence": "Save room for the desserts! ;-)",
+      "target": "desserts",
+      "gold_polarity": "positive",
+      "predicted_polarity": "neutral",
+      "confidence": 0.4607333838939667,
+      "correct": false
+    },
+    {
+      "instance_id": "35704115#614067#0_aspect_177",
+      "sentence": "Wonderful menu, warm inviting ambiance, great service the FOOD keeps me coming back!",
+      "target": "FOOD",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.6522464752197266,
+      "correct": true
+    },
+    {
+      "instance_id": "11313392#560011#1_aspect_178",
+      "sentence": "Pizzas were excellent in addition to appetizers and main courses.",
+      "target": "appetizers",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.6345693469047546,
+      "correct": true
+    },
+    {
+      "instance_id": "11313392#560011#1_aspect_179",
+      "sentence": "Pizzas were excellent in addition to appetizers and main courses.",
+      "target": "main courses",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.636903703212738,
+      "correct": true
+    },
+    {
+      "instance_id": "11610050#517598#0_aspect_180",
+      "sentence": "I HAVE NEVER HAD A BAD MEAL(OR BAD SERVICE )@ PIGALLE.",
+      "target": "MEAL",
+      "gold_polarity": "positive",
+      "predicted_polarity": "neutral",
+      "confidence": 0.5328762531280518,
+      "correct": false
+    },
+    {
+      "instance_id": "11610050#517598#0_aspect_181",
+      "sentence": "I HAVE NEVER HAD A BAD MEAL(OR BAD SERVICE )@ PIGALLE.",
+      "target": "SERVICE",
+      "gold_polarity": "positive",
+      "predicted_polarity": "neutral",
+      "confidence": 0.5077126026153564,
+      "correct": false
+    },
+    {
+      "instance_id": "11408946#789662#1_aspect_182",
+      "sentence": "Between my guest and I, we sampled at least 80% of the menu, and they were all hits.",
+      "target": "menu",
+      "gold_polarity": "positive",
+      "predicted_polarity": "neutral",
+      "confidence": 0.49995994567871094,
+      "correct": false
+    },
+    {
+      "instance_id": "33068425#562449#1_aspect_183",
+      "sentence": "For someone who used to hate Indian food, Baluchi's has changed my mid.",
+      "target": "Indian food",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.6127764582633972,
+      "correct": true
+    },
+    {
+      "instance_id": "11351741#1733901#0_aspect_184",
+      "sentence": "I went for restaurant week and ordered off the prix fixe menu",
+      "target": "prix fixe menu",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "negative",
+      "confidence": 0.49116769433021545,
+      "correct": false
+    },
+    {
+      "instance_id": "35158410#1207085#2_aspect_185",
+      "sentence": "They bring a sauce cart up to your table and offer you up to 7 or 8 choices of sauces for your steak (I tried them ALL).",
+      "target": "steak",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.6710543632507324,
+      "correct": false
+    },
+    {
+      "instance_id": "35158410#1207085#2_aspect_186",
+      "sentence": "They bring a sauce cart up to your table and offer you up to 7 or 8 choices of sauces for your steak (I tried them ALL).",
+      "target": "choices of sauces",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.6634589433670044,
+      "correct": true
+    },
+    {
+      "instance_id": "35158410#1207085#2_aspect_187",
+      "sentence": "They bring a sauce cart up to your table and offer you up to 7 or 8 choices of sauces for your steak (I tried them ALL).",
+      "target": "sauce cart",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.6726024150848389,
+      "correct": false
+    },
+    {
+      "instance_id": "35158410#1207085#2_aspect_188",
+      "sentence": "They bring a sauce cart up to your table and offer you up to 7 or 8 choices of sauces for your steak (I tried them ALL).",
+      "target": "table",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.6741882562637329,
+      "correct": false
+    },
+    {
+      "instance_id": "15094232#1295193#2_aspect_189",
+      "sentence": "Not only was the sushi fresh, they also served other entrees allowed each guest something to choose from and we all left happy (try the duck!",
+      "target": "entrees",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.5532037019729614,
+      "correct": false
+    },
+    {
+      "instance_id": "11351328#1638529#2_aspect_190",
+      "sentence": "After I paid for my purchase, I noticed they had not given me utensils so I could eat my pie.",
+      "target": "utensils",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "negative",
+      "confidence": 0.5537099242210388,
+      "correct": false
+    },
+    {
+      "instance_id": "11351328#1638529#2_aspect_191",
+      "sentence": "After I paid for my purchase, I noticed they had not given me utensils so I could eat my pie.",
+      "target": "pie",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "negative",
+      "confidence": 0.5588048696517944,
+      "correct": false
+    },
+    {
+      "instance_id": "11350539#680470#6_aspect_192",
+      "sentence": "Likewise if you like really thin crust or really big slices then Nick and Joe's may not be your favorite.",
+      "target": "thin crust",
+      "gold_polarity": "negative",
+      "predicted_polarity": "negative",
+      "confidence": 0.5827969312667847,
+      "correct": true
+    },
+    {
+      "instance_id": "11350539#680470#6_aspect_193",
+      "sentence": "Likewise if you like really thin crust or really big slices then Nick and Joe's may not be your favorite.",
+      "target": "slices",
+      "gold_polarity": "negative",
+      "predicted_polarity": "negative",
+      "confidence": 0.5818356275558472,
+      "correct": true
+    },
+    {
+      "instance_id": "32938896#0#2_aspect_194",
+      "sentence": "Build a meal with side orders like Amazin' Greens salads, Buffalo Chicken Kickers and Cinna Stix.",
+      "target": "meal",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.5654122233390808,
+      "correct": false
+    },
+    {
+      "instance_id": "32938896#0#2_aspect_195",
+      "sentence": "Build a meal with side orders like Amazin' Greens salads, Buffalo Chicken Kickers and Cinna Stix.",
+      "target": "Amazin' Greens salads",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.5727763175964355,
+      "correct": false
+    },
+    {
+      "instance_id": "32938896#0#2_aspect_196",
+      "sentence": "Build a meal with side orders like Amazin' Greens salads, Buffalo Chicken Kickers and Cinna Stix.",
+      "target": "Buffalo Chicken Kickers",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.5797555446624756,
+      "correct": false
+    },
+    {
+      "instance_id": "32938896#0#2_aspect_197",
+      "sentence": "Build a meal with side orders like Amazin' Greens salads, Buffalo Chicken Kickers and Cinna Stix.",
+      "target": "Cinna Stix",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.5742998123168945,
+      "correct": false
+    },
+    {
+      "instance_id": "32938896#0#2_aspect_198",
+      "sentence": "Build a meal with side orders like Amazin' Greens salads, Buffalo Chicken Kickers and Cinna Stix.",
+      "target": "side orders",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.5512956380844116,
+      "correct": false
+    },
+    {
+      "instance_id": "33070588#0#2_aspect_199",
+      "sentence": "Thick fries, meaty chili and stuffed baked potatoes round out a menu that includes a cool, ultra-thick chocolate Frosty.",
+      "target": "meaty chili",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.6872109770774841,
+      "correct": false
+    },
+    {
+      "instance_id": "33070588#0#2_aspect_200",
+      "sentence": "Thick fries, meaty chili and stuffed baked potatoes round out a menu that includes a cool, ultra-thick chocolate Frosty.",
+      "target": "stuffed baked potatoes",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.6872201561927795,
+      "correct": false
+    },
+    {
+      "instance_id": "33070588#0#2_aspect_201",
+      "sentence": "Thick fries, meaty chili and stuffed baked potatoes round out a menu that includes a cool, ultra-thick chocolate Frosty.",
+      "target": "menu",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.6887204051017761,
+      "correct": false
+    },
+    {
+      "instance_id": "11482070#503858#2_aspect_202",
+      "sentence": "I always find myself asking the waiter to make something bland and different than what is on the menu.",
+      "target": "waiter",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "negative",
+      "confidence": 0.5068842172622681,
+      "correct": false
+    },
+    {
+      "instance_id": "11482070#503858#2_aspect_203",
+      "sentence": "I always find myself asking the waiter to make something bland and different than what is on the menu.",
+      "target": "menu",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "negative",
+      "confidence": 0.5054137706756592,
+      "correct": false
+    },
+    {
+      "instance_id": "32936760#1397861#8_aspect_204",
+      "sentence": "Good cake BUT: it was not the best cake i've ever had, and definately not worth standing outside on the sidewalk being herded like cattle by indifferent and overworked employees.",
+      "target": "employees",
+      "gold_polarity": "negative",
+      "predicted_polarity": "negative",
+      "confidence": 0.5974910259246826,
+      "correct": true
+    },
+    {
+      "instance_id": "35720486#684689#1_aspect_205",
+      "sentence": "The closest that I got was the Cherry Marscapone, but they were out of it that day.",
+      "target": "Cherry Marscapone",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "negative",
+      "confidence": 0.5727365016937256,
+      "correct": false
+    },
+    {
+      "instance_id": "35719198#0#3_aspect_206",
+      "sentence": "The homage to India is most evident in the delectable roti canai appetizer, a fried pancake served with pungent curry dipping sauce, while the mango chicken offers a surprisingly sophisticated, fresh take on sweet-and-sour.",
+      "target": "fried pancake served with pungent curry dipping sauce",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.674596905708313,
+      "correct": true
+    },
+    {
+      "instance_id": "33507331#1177339#1_aspect_207",
+      "sentence": "It doesn't look like much on the outside, but the minute you walk inside, it's a whole other atmosphere.",
+      "target": "outside",
+      "gold_polarity": "negative",
+      "predicted_polarity": "negative",
+      "confidence": 0.5054819583892822,
+      "correct": true
+    },
+    {
+      "instance_id": "33507331#1177339#1_aspect_208",
+      "sentence": "It doesn't look like much on the outside, but the minute you walk inside, it's a whole other atmosphere.",
+      "target": "atmosphere",
+      "gold_polarity": "positive",
+      "predicted_polarity": "negative",
+      "confidence": 0.5458956360816956,
+      "correct": false
+    },
+    {
+      "instance_id": "35709141#1107179#3_aspect_209",
+      "sentence": "We requested they re-slice the sushi, and it was returned to us in small cheese-like cubes.",
+      "target": "sushi",
+      "gold_polarity": "negative",
+      "predicted_polarity": "neutral",
+      "confidence": 0.4854625165462494,
+      "correct": false
+    },
+    {
+      "instance_id": "11351354#412616#1_aspect_210",
+      "sentence": "The service, however, is a peg or two below the quality of food (horrible bartenders), and the clientele, for the most part, are rowdy, loud-mouthed commuters (this could explain the bad attitudes from the staff) getting loaded for an AC/DC concert or a Knicks game.",
+      "target": "quality of food",
+      "gold_polarity": "positive",
+      "predicted_polarity": "negative",
+      "confidence": 0.6026040315628052,
+      "correct": false
+    },
+    {
+      "instance_id": "11349840#433070#7_aspect_211",
+      "sentence": "Unfortunately, with our show tickets, we didn't have time to sample any desserts.",
+      "target": "desserts",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "negative",
+      "confidence": 0.5501534938812256,
+      "correct": false
+    },
+    {
+      "instance_id": "35391416#500259#5_aspect_212",
+      "sentence": "Make more tables- perhaps a rooftop bar?",
+      "target": "tables",
+      "gold_polarity": "negative",
+      "predicted_polarity": "neutral",
+      "confidence": 0.6112364530563354,
+      "correct": false
+    },
+    {
+      "instance_id": "35391416#500259#5_aspect_213",
+      "sentence": "Make more tables- perhaps a rooftop bar?",
+      "target": "rooftop bar",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "neutral",
+      "confidence": 0.6133983135223389,
+      "correct": true
+    },
+    {
+      "instance_id": "32944704#492723#1_aspect_214",
+      "sentence": "The decoration was feeling like we was on the Cairo, actually the street is part of that adventure.",
+      "target": "decoration",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.5935446619987488,
+      "correct": true
+    },
+    {
+      "instance_id": "11350033#1264371#3_aspect_215",
+      "sentence": "I didn't go there for food so I can't comment.",
+      "target": "food",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "negative",
+      "confidence": 0.5396392941474915,
+      "correct": false
+    },
+    {
+      "instance_id": "35509422#0#1_aspect_216",
+      "sentence": "Young neighborhood trendies graze at the counter during the day, while chic, art-house drinkers with heavy doses of the munchies pile in late at night.",
+      "target": "counter",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "neutral",
+      "confidence": 0.4609633982181549,
+      "correct": true
+    },
+    {
+      "instance_id": "35393632#1591698#0_aspect_217",
+      "sentence": "Bring your date and a bottle of wine!",
+      "target": "bottle of wine",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.6674879193305969,
+      "correct": false
+    },
+    {
+      "instance_id": "35816071#637243#2_aspect_218",
+      "sentence": "His food is excellent (and not expensive by NYC standards- no entrees over $30, most appetizers $12 to 14).",
+      "target": "entrees",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.6615632176399231,
+      "correct": true
+    },
+    {
+      "instance_id": "35693083#822138#1_aspect_219",
+      "sentence": "Being Puerto Rican I know a thing or two about flan and this place serves one of the best (I hope Mom doesn't read this!).",
+      "target": "flan",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.6749504804611206,
+      "correct": true
+    },
+    {
+      "instance_id": "11349536#778388#0_aspect_220",
+      "sentence": "Had dinner here on a Friday and the food was great.",
+      "target": "dinner",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.5592967867851257,
+      "correct": false
+    },
+    {
+      "instance_id": "35709275#573688#2_aspect_221",
+      "sentence": "Highly recommended...  As stated, I haven't dined *in* the restaurant but stopped by there to pick up takeout and it seems a very relaxing place; also, the bar looks nice.",
+      "target": "takeout",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.628136932849884,
+      "correct": false
+    },
+    {
+      "instance_id": "33069925#747092#3_aspect_222",
+      "sentence": "but, the filet mignon was not very good at all cocktail hour includes free appetizers (nice non-sushi selection).",
+      "target": "cocktail hour",
+      "gold_polarity": "positive",
+      "predicted_polarity": "negative",
+      "confidence": 0.5558341145515442,
+      "correct": false
+    },
+    {
+      "instance_id": "11351725#582163#3_aspect_223",
+      "sentence": "It took about 2 1/2 hours to be served our 2 courses.",
+      "target": "courses",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "neutral",
+      "confidence": 0.4846474826335907,
+      "correct": true
+    },
+    {
+      "instance_id": "11351725#582163#3_aspect_224",
+      "sentence": "It took about 2 1/2 hours to be served our 2 courses.",
+      "target": "served",
+      "gold_polarity": "negative",
+      "predicted_polarity": "neutral",
+      "confidence": 0.4887060523033142,
+      "correct": false
+    },
+    {
+      "instance_id": "11359764#1373169#1_aspect_225",
+      "sentence": "Who said go when the place is quiet during the day?",
+      "target": "place",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "neutral",
+      "confidence": 0.6190346479415894,
+      "correct": true
+    },
+    {
+      "instance_id": "32894791#1611374#1_aspect_226",
+      "sentence": "good place to hang out during the day after shopping or to grab a simple soup or classic french dish over a glass of wine.",
+      "target": "glass of wine",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.6687639951705933,
+      "correct": false
+    },
+    {
+      "instance_id": "11350033#1264371#2_aspect_227",
+      "sentence": "However, there is just something so great about being outdoors, in great landscaping, enjoying a casual drink that makes going to this place worthwhile.",
+      "target": "place",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.6552372574806213,
+      "correct": true
+    },
+    {
+      "instance_id": "11567247#1415594#1_aspect_228",
+      "sentence": "We were seated promptly in close proximity to the dance floor.",
+      "target": "dance floor",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.5685549378395081,
+      "correct": false
+    },
+    {
+      "instance_id": "11351521#768768#2_aspect_229",
+      "sentence": "If you are here as a pre-show meal, hop in a cab and take the extra 10 minutes to go to the uptown location.",
+      "target": "pre-show meal",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "neutral",
+      "confidence": 0.6050092577934265,
+      "correct": true
+    },
+    {
+      "instance_id": "11651065#413029#1_aspect_230",
+      "sentence": "The comments about fried foods is correct (below) but the other dishes, including the lamb entree and many of the salads (avocado shrimp) were quite good.",
+      "target": "fried foods",
+      "gold_polarity": "negative",
+      "predicted_polarity": "neutral",
+      "confidence": 0.5301192402839661,
+      "correct": false
+    },
+    {
+      "instance_id": "32897564#894393#1_aspect_231",
+      "sentence": "The sauce is excellent (very fresh) with dabs of real mozzarella.",
+      "target": "dabs of real mozzarella",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.6712813973426819,
+      "correct": false
+    },
+    {
+      "instance_id": "33070305#1312437#5_aspect_232",
+      "sentence": "The room is a little plain, but it's difficult to make such a small place exciting and I would not suggest that as a reason not to go.",
+      "target": "place",
+      "gold_polarity": "negative",
+      "predicted_polarity": "negative",
+      "confidence": 0.5237833857536316,
+      "correct": true
+    },
+    {
+      "instance_id": "35170181#0#5_aspect_233",
+      "sentence": "The best dessert, a chocolate and peanut butter tart, isn't particularly Hawaiian, but it's a small world when it comes to sweets.",
+      "target": "chocolate and peanut butter tart",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.7131078839302063,
+      "correct": true
+    },
+    {
+      "instance_id": "35170181#0#5_aspect_234",
+      "sentence": "The best dessert, a chocolate and peanut butter tart, isn't particularly Hawaiian, but it's a small world when it comes to sweets.",
+      "target": "sweets",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.6959714889526367,
+      "correct": false
+    },
+    {
+      "instance_id": "32464595#574909#1_aspect_235",
+      "sentence": "Satay is one of those favorite haunts on Washington where the service and food is always on the money.",
+      "target": "service",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.6528488397598267,
+      "correct": true
+    },
+    {
+      "instance_id": "32464595#574909#1_aspect_236",
+      "sentence": "Satay is one of those favorite haunts on Washington where the service and food is always on the money.",
+      "target": "food",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.654716432094574,
+      "correct": true
+    },
+    {
+      "instance_id": "11349536#778388#2_aspect_237",
+      "sentence": "After dinner I heard music playing and discovered that there is a lounge downstairs.",
+      "target": "dinner",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "neutral",
+      "confidence": 0.6260335445404053,
+      "correct": true
+    },
+    {
+      "instance_id": "11349536#778388#2_aspect_238",
+      "sentence": "After dinner I heard music playing and discovered that there is a lounge downstairs.",
+      "target": "music",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "neutral",
+      "confidence": 0.637763500213623,
+      "correct": true
+    },
+    {
+      "instance_id": "11349536#778388#2_aspect_239",
+      "sentence": "After dinner I heard music playing and discovered that there is a lounge downstairs.",
+      "target": "lounge",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "neutral",
+      "confidence": 0.640725314617157,
+      "correct": true
+    },
+    {
+      "instance_id": "35816071#637243#3_aspect_240",
+      "sentence": "The room is a gorgeous, bi-level space and the long bar perfect for a drink.",
+      "target": "drink",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.6886675953865051,
+      "correct": false
+    },
+    {
+      "instance_id": "11350142#1253117#2_aspect_241",
+      "sentence": "Two complaints- their appetizer selection stinks, it would be nice to get some mozzarella sticks on the menu.",
+      "target": "mozzarella sticks",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "negative",
+      "confidence": 0.5673450231552124,
+      "correct": false
+    },
+    {
+      "instance_id": "11350142#1253117#2_aspect_242",
+      "sentence": "Two complaints- their appetizer selection stinks, it would be nice to get some mozzarella sticks on the menu.",
+      "target": "menu",
+      "gold_polarity": "negative",
+      "predicted_polarity": "negative",
+      "confidence": 0.5830294489860535,
+      "correct": true
+    },
+    {
+      "instance_id": "32950061#1264345#3_aspect_243",
+      "sentence": "I was especially impressed during the bday party when the waitstaff went above and beyond in helping me decorate and bring out a bday cake as well as offering prompt and friendly service to a 15 person party.",
+      "target": "waitstaff",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.6433212757110596,
+      "correct": true
+    },
+    {
+      "instance_id": "33085669#409731#2_aspect_244",
+      "sentence": "The atmosphere takes you to that place, the place many dream of.",
+      "target": "atmosphere",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.6931381225585938,
+      "correct": true
+    },
+    {
+      "instance_id": "32899282#556036#1_aspect_245",
+      "sentence": "They are served on Focacchia bread and are to die for.",
+      "target": "served",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "negative",
+      "confidence": 0.5216410160064697,
+      "correct": false
+    },
+    {
+      "instance_id": "11432442#650772#2_aspect_246",
+      "sentence": "The guac is fresh, yet lacking flavor, we like to add our fresh salsa into it.",
+      "target": "fresh salsa",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "neutral",
+      "confidence": 0.6031155586242676,
+      "correct": true
+    },
+    {
+      "instance_id": "33061445#591371#0_aspect_247",
+      "sentence": "It' only open for lunch but the food is so good!",
+      "target": "lunch",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.6298556923866272,
+      "correct": false
+    },
+    {
+      "instance_id": "33070383#592089#1_aspect_248",
+      "sentence": "If you like seafood and/or Greek food you will love this place though it is not limited to just these things.",
+      "target": "seafood",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.6779900789260864,
+      "correct": true
+    },
+    {
+      "instance_id": "33070383#592089#1_aspect_249",
+      "sentence": "If you like seafood and/or Greek food you will love this place though it is not limited to just these things.",
+      "target": "Greek food",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.6786707043647766,
+      "correct": true
+    },
+    {
+      "instance_id": "35668286#0#2_aspect_250",
+      "sentence": "\" The menu includes pub fare--burgers, steaks and shepherds pie--and even a portabella lasagna for those black sheep known as \"vegetarians.",
+      "target": "menu",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.6594163775444031,
+      "correct": false
+    },
+    {
+      "instance_id": "35668286#0#2_aspect_251",
+      "sentence": "\" The menu includes pub fare--burgers, steaks and shepherds pie--and even a portabella lasagna for those black sheep known as \"vegetarians.",
+      "target": "burgers",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.6503798961639404,
+      "correct": false
+    },
+    {
+      "instance_id": "35668286#0#2_aspect_252",
+      "sentence": "\" The menu includes pub fare--burgers, steaks and shepherds pie--and even a portabella lasagna for those black sheep known as \"vegetarians.",
+      "target": "steaks",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.6503888964653015,
+      "correct": false
+    },
+    {
+      "instance_id": "35668286#0#2_aspect_253",
+      "sentence": "\" The menu includes pub fare--burgers, steaks and shepherds pie--and even a portabella lasagna for those black sheep known as \"vegetarians.",
+      "target": "shepherds pie",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.6529876589775085,
+      "correct": false
+    },
+    {
+      "instance_id": "35668286#0#2_aspect_254",
+      "sentence": "\" The menu includes pub fare--burgers, steaks and shepherds pie--and even a portabella lasagna for those black sheep known as \"vegetarians.",
+      "target": "portabella lasagna",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.6492902636528015,
+      "correct": false
+    },
+    {
+      "instance_id": "35668286#0#2_aspect_255",
+      "sentence": "\" The menu includes pub fare--burgers, steaks and shepherds pie--and even a portabella lasagna for those black sheep known as \"vegetarians.",
+      "target": "pub fare",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.6565375328063965,
+      "correct": false
+    },
+    {
+      "instance_id": "33060905#1138585#4_aspect_256",
+      "sentence": "i have eaten here on a different occasion - the food is mediocre for the prices.",
+      "target": "prices",
+      "gold_polarity": "negative",
+      "predicted_polarity": "negative",
+      "confidence": 0.5846887826919556,
+      "correct": true
+    },
+    {
+      "instance_id": "35695422#1464305#5_aspect_257",
+      "sentence": "I'm looking forward to going back soon and eventually trying most everything on the menu!",
+      "target": "menu",
+      "gold_polarity": "positive",
+      "predicted_polarity": "positive",
+      "confidence": 0.5421482920646667,
+      "correct": true
+    },
+    {
+      "instance_id": "36220672#1714981#0_aspect_258",
+      "sentence": "I just had my first visit to this place and can't wait to go back and slowly work my way through the menu.",
+      "target": "menu",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "positive",
+      "confidence": 0.64588862657547,
+      "correct": false
+    },
+    {
+      "instance_id": "33068909#1189415#4_aspect_259",
+      "sentence": "I asked repeatedly what the status of the meal was and was pretty much grunted at by the unbelievably rude waiter.",
+      "target": "meal",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "negative",
+      "confidence": 0.5883256793022156,
+      "correct": false
+    },
+    {
+      "instance_id": "33067279#1612676#0_aspect_260",
+      "sentence": "I stopped by for some brunch today and had the vegan cranberry pancakes and some rice milk.",
+      "target": "brunch",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "neutral",
+      "confidence": 0.5862593054771423,
+      "correct": true
+    },
+    {
+      "instance_id": "33067279#1612676#0_aspect_261",
+      "sentence": "I stopped by for some brunch today and had the vegan cranberry pancakes and some rice milk.",
+      "target": "vegan cranberry pancakes",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "neutral",
+      "confidence": 0.5860974192619324,
+      "correct": true
+    },
+    {
+      "instance_id": "33067279#1612676#0_aspect_262",
+      "sentence": "I stopped by for some brunch today and had the vegan cranberry pancakes and some rice milk.",
+      "target": "rice milk",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "neutral",
+      "confidence": 0.587319552898407,
+      "correct": true
+    },
+    {
+      "instance_id": "32443281#959917#4_aspect_263",
+      "sentence": "Its good to go there for drinks if you don't want to get drunk because you'll be lucky if you can get one drink an hour the service is so bad.",
+      "target": "drink",
+      "gold_polarity": "neutral",
+      "predicted_polarity": "negative",
+      "confidence": 0.5097365975379944,
+      "correct": false
+    },
+    {
+      "instance_id": "11350390#802808#3_aspect_264",
+      "sentence": "I have never in my life sent back food before, but I simply had to, and the waiter argued with me over this.",
+      "target": "food",
+      "gold_polarity": "negative",
+      "predicted_polarity": "negative",
+      "confidence": 0.5192980170249939,
+      "correct": true
+    },
+    {
+      "instance_id": "11350390#802808#3_aspect_265",
+      "sentence": "I have never in my life sent back food before, but I simply had to, and the waiter argued with me over this.",
+      "target": "waiter",
+      "gold_polarity": "negative",
+      "predicted_polarity": "negative",
+      "confidence": 0.5317038893699646,
+      "correct": true
+    },
+    {
+      "instance_id": "11482070#503858#3_aspect_266",
+      "sentence": "Although the restaurant itself is nice, I prefer not to go for the food.",
+      "target": "food",
+      "gold_polarity": "negative",
+      "predicted_polarity": "negative",
+      "confidence": 0.5346784591674805,
+      "correct": true
+    }
+  ]
+}

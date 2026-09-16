@@ -1,0 +1,42 @@
+{
+  "datasets": {
+    "restaurant14": {
+      "train": {
+        "total_all": 3602,
+        "total_isa": 1030,
+        "total_explicit": 2572,
+        "all_filepath": "D:\\UROP\\MT-ISA\\data\\processed\\restaurant14_train_all.json",
+        "isa_filepath": "D:\\UROP\\MT-ISA\\data\\processed\\restaurant14_train_isa.json"
+      },
+      "test": {
+        "total_all": 1120,
+        "total_isa": 267,
+        "total_explicit": 853,
+        "all_filepath": "D:\\UROP\\MT-ISA\\data\\processed\\restaurant14_test_all.json",
+        "isa_filepath": "D:\\UROP\\MT-ISA\\data\\processed\\restaurant14_test_isa.json"
+      }
+    },
+    "laptop14": {
+      "train": {
+        "total_all": 2313,
+        "total_isa": 716,
+        "total_explicit": 1597,
+        "all_filepath": "D:\\UROP\\MT-ISA\\data\\processed\\laptop14_train_all.json",
+        "isa_filepath": "D:\\UROP\\MT-ISA\\data\\processed\\laptop14_train_isa.json"
+      },
+      "test": {
+        "total_all": 638,
+        "total_isa": 175,
+        "total_explicit": 463,
+        "all_filepath": "D:\\UROP\\MT-ISA\\data\\processed\\laptop14_test_all.json",
+        "isa_filepath": "D:\\UROP\\MT-ISA\\data\\processed\\laptop14_test_isa.json"
+      }
+    }
+  },
+  "source": "https://github.com/Tribleave/SCAPT-ABSA (Li et al., EMNLP 2021)",
+  "polarity_classes": [
+    "positive",
+    "negative",
+    "neutral"
+  ]
+}

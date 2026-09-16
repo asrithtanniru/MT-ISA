@@ -1,0 +1,34 @@
+# Virtual environment
+venv/
+.venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# IDE
+.vscode/
+.idea/
+
+# Environment/secrets
+.env
+*.key
+
+# Model/checkpoint files
+*.pt
+*.pth
+*.bin
+*.safetensors
+checkpoints/
+runs/
+
+# Large generated data
+data/auxiliary/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
