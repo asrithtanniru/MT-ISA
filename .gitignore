@@ -23,8 +23,7 @@ __pycache__/
 checkpoints/
 runs/
 
-# Large generated data
-data/auxiliary/
+
 
 # Logs
 *.log
