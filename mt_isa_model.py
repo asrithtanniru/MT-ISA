@@ -273,7 +273,7 @@ class MTISAModel(nn.Module):
         # Input D-AWL: scale encoder embeddings by confidence.
         inputs_embeds = None
         if strategy in ("input", "input_output"):
-            inputs_embeds = self.t5.get_input_embeddings()(input_ids)
+            inputs_embeds = self.backbone.get_input_embeddings()(input_ids)
             inputs_embeds = inputs_embeds * confidence.view(-1, 1, 1).to(
                 dtype=inputs_embeds.dtype
             )
@@ -285,7 +285,7 @@ class MTISAModel(nn.Module):
 
         # Forward T5. Do not ask HF to compute the reduced loss; we compute
         # a masked per-example token NLL below so D-AWL can be instance-level.
-        outputs = self.t5(
+        outputs = self.backbone(
             input_ids=None if inputs_embeds is not None else input_ids,
             inputs_embeds=inputs_embeds,
             attention_mask=attention_mask,
