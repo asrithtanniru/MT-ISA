@@ -295,151 +295,52 @@ class MTISAModel(nn.Module):
 
     def _auxiliary_forward(
         self,
-        input_ids,
-        attention_mask,
-        labels,
-        confidence=None,
-        strategy="input",
+        input_ids: torch.Tensor,
+        attention_mask: torch.Tensor,
+        labels: Optional[torch.Tensor],
+        confidence: Optional[torch.Tensor],
     ):
-        """
-        Auxiliary T5 forward with numerically safe D-AWL.
+        labels = self._prepare_labels(labels)
 
-        D-AWL:
-          input:       confidence scales encoder input embeddings
-          output:      confidence weights per-example auxiliary loss
-          input_output: both
+        inputs_embeds = self.backbone.get_input_embeddings()(input_ids)
 
-        Padding target tokens are ignored. Examples with no valid target
-        tokens are excluded from the auxiliary-loss average.
-        """
-        device = input_ids.device
-
-        # Ensure labels are safe for T5 CrossEntropy/NLL.
-        labels = labels.clone()
-        pad_id = self.tokenizer.pad_token_id
-        if pad_id is not None:
-            labels[labels == pad_id] = -100
-
-        valid_mask = labels.ne(-100)
-        valid_counts = valid_mask.sum(dim=1)
-        valid_examples = valid_counts.gt(0)
-
-        # A completely empty target batch cannot produce a meaningful
-        # supervised auxiliary loss. Return a finite zero loss.
-        if not valid_examples.any():
-            return None, torch.zeros((), device=device, dtype=torch.float32)
-
-        # Confidence is per-instance.
-        if confidence is None:
-            confidence = torch.ones(
-                input_ids.size(0), device=device, dtype=torch.float32
-            )
-        else:
-            confidence = confidence.to(device=device, dtype=torch.float32).reshape(-1)
-
-        if confidence.numel() != input_ids.size(0):
-            raise ValueError(
-                f"Confidence size {confidence.numel()} does not match batch size "
-                f"{input_ids.size(0)}"
+        if confidence is not None and self.d_awl_strategy in {
+            "input", "input_output"
+        }:
+            inputs_embeds = self.d_awl.scale_embeddings(
+                inputs_embeds, confidence
             )
 
-        if not torch.isfinite(confidence).all():
-            raise FloatingPointError(
-                f"Non-finite D-AWL confidence: "
-                f"min={torch.nan_to_num(confidence, nan=0.0, posinf=0.0, neginf=0.0).min().item():.6g}, "
-                f"max={torch.nan_to_num(confidence, nan=0.0, posinf=0.0, neginf=0.0).max().item():.6g}"
-            )
-
-        confidence = confidence.clamp(0.0, 1.0)
-
-        # Input D-AWL: scale encoder embeddings by confidence.
-        inputs_embeds = None
-        if strategy in ("input", "input_output"):
-            embedding_layer = self.backbone.get_input_embeddings()
-            raw_inputs_embeds = embedding_layer(input_ids)
-
-            if not torch.isfinite(raw_inputs_embeds).all():
-                self._print_debug_context()
-                weight_min, weight_max = _tensor_min_max(embedding_layer.weight)
-                input_min, input_max = _tensor_min_max(input_ids)
-                conf_min, conf_max = _tensor_min_max(confidence)
-                print(
-                    "Raw embedding diagnostics: "
-                    f"embedding_layer.weight min={weight_min}, max={weight_max}; "
-                    f"embedding_layer.weight finite={_tensor_is_finite(embedding_layer.weight)}; "
-                    f"input_ids min={input_min}, max={input_max}; "
-                    f"confidence min={conf_min}, max={conf_max}",
-                    flush=True,
-                )
-                raise FloatingPointError("Raw T5 embeddings are non-finite")
-
-            inputs_embeds = raw_inputs_embeds * confidence.view(-1, 1, 1).to(
-                dtype=raw_inputs_embeds.dtype
-            )
-
-            if not torch.isfinite(inputs_embeds).all():
-                self._print_debug_context()
-                raw_min, raw_max = _tensor_min_max(raw_inputs_embeds)
-                conf_min, conf_max = _tensor_min_max(confidence)
-                print(
-                    "Scaled embedding diagnostics: "
-                    f"raw embedding min={raw_min}, max={raw_max}; "
-                    f"confidence min={conf_min}, max={conf_max}; "
-                    f"confidence dtype={confidence.dtype}; "
-                    f"embedding dtype={raw_inputs_embeds.dtype}",
-                    flush=True,
-                )
-                raise FloatingPointError(
-                    "Non-finite inputs_embeds after D-AWL confidence scaling"
-                )
-
-        # Forward T5. Do not ask HF to compute the reduced loss; we compute
-        # a masked per-example token NLL below so D-AWL can be instance-level.
-        outputs = self.backbone(
-            input_ids=None if inputs_embeds is not None else input_ids,
+        output = self.backbone(
+            input_ids=None,
             inputs_embeds=inputs_embeds,
             attention_mask=attention_mask,
             labels=labels,
         )
 
-        logits = outputs.logits
-        if not torch.isfinite(logits).all():
-            raise FloatingPointError(
-                "Non-finite T5 auxiliary logits"
+        if labels is None:
+            return output, None
+
+        if confidence is not None and self.d_awl_strategy in {
+            "output", "input_output"
+        }:
+            loss = self.d_awl.weighted_token_loss(
+                output.logits, labels, confidence
             )
-
-        # Compute NLL in float32 for numerical stability.
-        log_probs = torch.log_softmax(logits.float(), dim=-1)
-
-        safe_labels = labels.clamp_min(0)
-        selected = log_probs.gather(
-            dim=-1, index=safe_labels.unsqueeze(-1)
-        ).squeeze(-1)
-
-        token_nll = -selected
-        token_nll = token_nll * valid_mask.float()
-
-        per_example_loss = token_nll.sum(dim=1) / valid_counts.clamp_min(1).float()
-
-        # Only examples with at least one valid target token participate.
-        per_example_loss = per_example_loss[valid_examples]
-        example_conf = confidence[valid_examples]
-
-        if strategy in ("output", "input_output"):
-            # Output D-AWL: confidence weights the per-instance loss.
-            denom = example_conf.sum().clamp_min(1e-8)
-            loss = (per_example_loss * example_conf).sum() / denom
         else:
-            loss = per_example_loss.mean()
-
-        loss = loss.float()
+            loss = F.cross_entropy(
+                output.logits.reshape(-1, output.logits.size(-1)),
+                labels.reshape(-1),
+                ignore_index=-100,
+            )
 
         if not torch.isfinite(loss):
             raise FloatingPointError(
-                f"Non-finite auxiliary loss with D-AWL '{strategy}': {loss.item()}"
+                f"Non-finite auxiliary loss with D-AWL "
+                f"'{self.d_awl_strategy}': {loss.detach().item()}"
             )
 
-        return outputs, loss
+        return output, loss
 
     def forward(
         self,
